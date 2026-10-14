@@ -1,61 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio Personal</title>
-    <link rel="stylesheet" href="./CSS/style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Portafolio de Carlos Javier Ramos Martinez</h1>
-      <p>Desarrollador FullStack</p>
-    </header>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carlos Ramos | Analista de Transformación Digital</title>
+<meta name="description" content="Carlos Ramos, Analista de Transformación Digital. Odoo, desarrollo web e integraciones empresariales en Guatemala.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7f9;--text:#1e293b;--head:#0f172a;--muted:#64748b;--line:#dde2ea;--a:#0f766e;--tint:rgba(15,118,110,.07);--chip:rgba(15,118,110,.1);--glow:rgba(15,118,110,.08);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1120;--text:#94a3b8;--head:#e2e8f0;--muted:#64748b;--line:#1e293b;--a:#5eead4;--tint:rgba(148,163,184,.06);--chip:rgba(94,234,212,.1);--glow:rgba(94,234,212,.07);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1120;--text:#94a3b8;--head:#e2e8f0;--muted:#64748b;--line:#1e293b;--a:#5eead4;--tint:rgba(148,163,184,.06);--chip:rgba(94,234,212,.1);--glow:rgba(94,234,212,.07);color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:var(--a);color:var(--bg)}
+a{color:inherit;text-decoration:none}
+#glow{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(600px circle at var(--mx,50%) var(--my,30%),var(--glow),transparent 70%)}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 24px}
+@media(min-width:1024px){.wrap{display:flex;justify-content:space-between;gap:40px;padding:0 48px}}
+header{padding:72px 0 24px}
+@media(min-width:1024px){header{position:sticky;top:0;height:100vh;width:42%;display:flex;flex-direction:column;justify-content:space-between;padding:96px 0}}
+h1{margin:0;font-size:clamp(2.3rem,5vw,3rem);line-height:1.1;font-weight:600;letter-spacing:-.02em;color:var(--head)}
+h1+h2{margin:12px 0 0;font-size:1.15rem;font-weight:500;color:var(--head)}
+.tag{margin:16px 0 0;max-width:20rem;color:var(--text)}
+nav{display:none;margin-top:56px}
+@media(min-width:1024px){nav{display:block}}
+nav a{display:flex;align-items:center;gap:14px;padding:9px 0;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+nav a::before{content:"";height:1px;width:32px;background:var(--muted);transition:width .25s,background .25s}
+nav a:hover,nav a.on{color:var(--head)}nav a:hover::before,nav a.on::before{width:64px;background:var(--head)}
+.soc{display:flex;flex-wrap:wrap;gap:20px;margin:32px 0 0;padding:0;list-style:none;font-size:.9rem}
+.soc a{color:var(--muted);transition:color .2s}.soc a:hover{color:var(--a)}
+main{padding:24px 0 80px}
+@media(min-width:1024px){main{width:54%;padding:96px 0}}
+section{margin-bottom:88px;scroll-margin-top:72px}
+.st{position:sticky;top:0;z-index:5;margin:0 -24px 20px;padding:18px 24px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--head)}
+@media(min-width:1024px){.st{position:static;margin:0 0 20px;padding:0;background:none;backdrop-filter:none;display:none}}
+section p{margin:0 0 16px}section p b{color:var(--head);font-weight:500}
+a.in{color:var(--head);font-weight:500;border-bottom:1px solid transparent;transition:.2s}a.in:hover{color:var(--a);border-color:var(--a)}
+.list{margin:0;padding:0;list-style:none}
+.list:hover .item{opacity:.55}.list .item:hover{opacity:1}
+.item{position:relative;display:grid;gap:8px;padding:18px;margin:0 -18px 8px;border-radius:8px;transition:opacity .25s,background .25s}
+@media(min-width:640px){.item{grid-template-columns:130px 1fr;gap:18px}}
+.item:hover{background:var(--tint)}
+.when{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.item h3{margin:0;font-size:1rem;font-weight:500;line-height:1.4;color:var(--head)}
+.item:hover h3,.item:hover h3 a{color:var(--a)}
+.item h3 span{color:var(--muted);font-weight:400}
+.item p{margin:8px 0 0;font-size:.92rem;color:var(--text)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;padding:0;list-style:none}
+.chips li{background:var(--chip);color:var(--a);padding:3px 12px;border-radius:99px;font-size:.74rem;font-weight:500}
+.ext::after{content:" \2197";font-size:.85em}
+.cta{display:inline-block;margin-top:8px;padding:12px 22px;border:1px solid var(--a);border-radius:6px;color:var(--a);font-weight:500;font-size:.92rem;transition:.2s}
+.cta:hover{background:var(--chip)}
+footer{font-size:.82rem;color:var(--muted);max-width:28rem}
+footer a:hover{color:var(--a)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="glow"></div>
+<div class="wrap">
+<header>
+<div>
+<h1>Carlos Ramos</h1>
+<h2>Analista de Transformación Digital</h2>
+<p class="tag">Conecto la operación del negocio con la tecnología: ERP Odoo, desarrollo web e integraciones.</p>
+<nav id="nav">
+<a href="#sobre-mi" class="on">Sobre mí</a>
+<a href="#experiencia">Experiencia</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#formacion">Formación</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</div>
+<ul class="soc">
+<li><a href="https://github.com/cramosmartinez" target="_blank" rel="noopener">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/carlos-javier-ramos-mart%C3%ADnez" target="_blank" rel="noopener">LinkedIn</a></li>
+<li><a href="https://www.instagram.com/cramos212gt/" target="_blank" rel="noopener">Instagram</a></li>
+<li><a href="mailto:cramosmartinez5@gmail.com">Correo</a></li>
+</ul>
+</header>
 
-    <section id="introduccion">
-      <h2>Introducción</h2>
-      <p>
-        Bienvenido a mi portafolio. Aquí encontrarás una muestra de mis
-        proyectos recientes. Soy un Desarrollador Junior/FullStack apasionado
-        por crear soluciones tecnológicas eficientes y de alto rendimiento. Mi
-        enfoque se basa en la rapidez para entregar resultados sin comprometer
-        la calidad. Me especializo en el desarrollo web, con experiencia tanto
-        en el front-end como en el back-end, lo que me permite ofrecer
-        soluciones integrales que cubren todas las necesidades de un proyecto.
-      </p>
-    </section>
+<main>
+<section id="sobre-mi">
+<h2 class="st">Sobre mí</h2>
+<p>Trabajo en la intersección entre el negocio y la tecnología. Empecé en áreas comerciales y de facturación, y eso me enseñó cómo piensa quien usa un sistema todos los días. Hoy, desde el lado técnico, construyo herramientas que resuelven esos problemas reales.</p>
+<p>Actualmente soy Analista de Transformación Digital en <a class="in" href="https://foragro.com" target="_blank" rel="noopener">Foragro</a>, donde levanto requerimientos, doy seguimiento a proyectos, hago QA funcional y propongo automatizaciones en varios países. Antes lideré el desarrollo en Odoo y la infraestructura en AWS y Docker en <a class="in" href="https://itland.com.gt" target="_blank" rel="noopener">ITLand</a>.</p>
+<p>También desarrollo sitios web para empresas, cuidando la experiencia del usuario, el rendimiento y que cada sitio se adapte a lo que el cliente necesita.</p>
+</section>
 
-    <section id="galeria">
-      <h2>Galería de Proyectos</h2>
-      <div class="project">
-        <img src="IMG/proyecto1.webp" alt="Proyecto 1" />
-        <div class="project-info">
-          <h3>Pagina web Kinal</h3>
-          <p>
-            Realizamos una página parecida a la de KINAL cuya tarea era darle
-            forma a nuestro gusto sin ninguna función.
-          </p>
-        </div>
-      </div>
+<section id="experiencia">
+<h2 class="st">Experiencia</h2>
+<ol class="list">
+<li class="item"><div class="when">2026 — Actual</div><div>
+<h3>Analista de Transformación Digital <span>· Foragro</span></h3>
+<p>Lideré la implementación de la aplicación de ventas APPSales4App en más de 15 canales comerciales de 6 países, desde el despliegue técnico hasta la adopción. Agilicé el ingreso de órdenes de venta, desarrollé reportes comerciales dinámicos y notificaciones por correo, y analicé datos de ventas para respaldar decisiones estratégicas.</p>
+<ul class="chips"><li>Transformación digital</li><li>Análisis de datos</li><li>QA funcional</li><li>Automatización</li></ul></div></li>
 
-      <div class="project">
-        <img src="IMG/proyecto2.webp" alt="Proyecto 2" />
-        <div class="project-info">
-          <h3>Pagina web Hotelaria</h3>
-          <p>
-            Página realizada usando Node JS y React, en la cual es una página de
-            hotelería en la cual podemos reservar suites de hoteles en la que
-            aporté en el front-end.
-          </p>
-        </div>
-      </div>
-    </section>
+<li class="item"><div class="when">2024 — 2026</div><div>
+<h3>IT Operations Engineer y Desarrollador <span>· ITLand</span></h3>
+<p>Dirigí la estrategia de desarrollo en Odoo, coordinando recursos de outsourcing y entregas. Centralicé módulos personalizados de nómina y localización de Guatemala para cumplir con requisitos fiscales y normativos. Diseñé y mantuve la arquitectura en AWS y Docker, optimizando bases de datos PostgreSQL. Desarrollé el sitio web de la empresa.</p>
+<ul class="chips"><li>Odoo</li><li>Python</li><li>QWeb</li><li>AWS EC2</li><li>Docker</li><li>PostgreSQL</li></ul></div></li>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Email: cramosmartinez5@gmail.com</p>
-      <p>Github: https://github.com/cramosmartinez</p>
-      <p>LinkedIn: https://www.linkedin.com/in/carlos-javier-ramos-mart%C3%ADnez/</p>
-    </section>
-  </body>
+<li class="item"><div class="when">2025</div><div>
+<h3>Consultor Freelance, Odoo y CRM <span>· Grupo AINCO</span></h3>
+<p>Proyecto de implementación y configuración de Odoo con enfoque en gestión de relaciones con clientes.</p>
+<ul class="chips"><li>Odoo</li><li>CRM</li></ul></div></li>
+
+<li class="item"><div class="when">2024</div><div>
+<h3>Auxiliar Comercial <span>· Sintegradas</span></h3>
+<p>Ejecuté el ciclo completo de ventas y facturación en CRM, con calificación de leads y procesamiento de pedidos. Esa experiencia operativa guía hoy cómo diseño herramientas para usuarios administrativos.</p></div></li>
+
+<li class="item"><div class="when">2023</div><div>
+<h3>Desarrollador Front-end, prácticas <span>· Is4Tech</span></h3>
+<p>Desarrollo de API REST con Spring Boot e interfaces en Angular para un sistema de gestión de parqueos.</p>
+<ul class="chips"><li>Spring Boot</li><li>Angular</li><li>TypeScript</li><li>Tailwind CSS</li></ul></div></li>
+</ol>
+</section>
+
+<section id="proyectos">
+<h2 class="st">Proyectos</h2>
+<ul class="list">
+<li><a class="item" href="https://itland.com.gt" target="_blank" rel="noopener"><div class="when">Sitio web</div><div><h3 class="ext">ITLand, servicios de outsourcing empresarial</h3><p>Sitio corporativo de la empresa de servicios de tecnología donde trabajé.</p><ul class="chips"><li>Wix</li><li>Diseño web</li></ul></div></a></li>
+<li><a class="item" href="https://foragro.com" target="_blank" rel="noopener"><div class="when">Sitio web</div><div><h3 class="ext">Foragro</h3><p>Presencia web para una empresa del sector agrícola con operación regional.</p><ul class="chips"><li>Diseño web</li></ul></div></a></li>
+<li><a class="item" href="https://bestenfelden.com" target="_blank" rel="noopener"><div class="when">Sitio web</div><div><h3 class="ext">Bestenfelden</h3><p>Sitio corporativo e institucional.</p><ul class="chips"><li>Diseño web</li></ul></div></a></li>
+<li class="item"><div class="when">Sitios web</div><div><h3>Concilia Group, Conciliatechx y Concilia HN · SV · GT</h3><p>Sitio corporativo del grupo y sus versiones para Honduras, El Salvador y Guatemala. Frontend responsive, optimización de carga y adaptación a los requerimientos del cliente.</p><ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div></li>
+<li><a class="item" href="https://github.com/cramosmartinez/whatsapp-center-odoo18" target="_blank" rel="noopener"><div class="when">Odoo 18</div><div><h3 class="ext">WhatsApp Center</h3><p>Módulo que integra la atención por WhatsApp dentro de Odoo.</p><ul class="chips"><li>Python</li><li>Odoo</li></ul></div></a></li>
+<li><a class="item" href="https://github.com/cramosmartinez/tms-last-mile-odoo18" target="_blank" rel="noopener"><div class="when">Odoo 18</div><div><h3 class="ext">TMS Last Mile</h3><p>Gestión de transporte y entregas de última milla integrada a Odoo.</p><ul class="chips"><li>Python</li><li>Odoo</li></ul></div></a></li>
+<li><a class="item" href="https://github.com/cramosmartinez/Microservicios" target="_blank" rel="noopener"><div class="when">Backend</div><div><h3 class="ext">Microservicios</h3><p>Arquitectura con Spring Boot, Spring Cloud, seguridad JWT, Docker, Kubernetes y despliegue en AWS ECS y EKS.</p><ul class="chips"><li>Java</li><li>Kubernetes</li><li>AWS</li></ul></div></a></li>
+<li><a class="item" href="https://github.com/cramosmartinez/MERN-CRUD-AUTH" target="_blank" rel="noopener"><div class="when">Fullstack</div><div><h3 class="ext">MERN CRUD con autenticación</h3><p>Aplicación web completa con MongoDB, Express, React y Node.js.</p><ul class="chips"><li>React</li><li>Node.js</li><li>MongoDB</li></ul></div></a></li>
+</ul>
+<p><a class="in ext" href="https://github.com/cramosmartinez?tab=repositories" target="_blank" rel="noopener">Ver los 68 repositorios en GitHub</a></p>
+</section>
+
+<section id="formacion">
+<h2 class="st">Formación</h2>
+<ol class="list">
+<li class="item"><div class="when">2024 — Actual</div><div><h3>Ingeniería en Sistemas <span>· Universidad Mariano Gálvez</span></h3></div></li>
+<li class="item"><div class="when">2018 — 2023</div><div><h3>Perito en Informática <span>· Fundación Kinal</span></h3><p>Base en React.js, Node.js y desarrollo de software.</p></div></li>
+<li class="item"><div class="when">2026</div><div><h3>Emprendimiento Innovador y Design Thinking <span>· INTECAP</span></h3><p>Certificación en innovación y diseño de soluciones centradas en las personas.</p></div></li>
+<li class="item"><div class="when">2026</div><div><h3>Introducción a la Inteligencia Artificial <span>· Platzi</span></h3></div></li>
+</ol>
+</section>
+
+<section id="contacto">
+<h2 class="st">Contacto</h2>
+<p>¿Tu negocio necesita un sitio web, un sistema Odoo o automatizar un proceso? Cuéntame qué buscas y te preparo una propuesta sin compromiso.</p>
+<a class="cta" href="mailto:cramosmartinez5@gmail.com">cramosmartinez5@gmail.com</a>
+</section>
+
+<footer>Diseñado y desarrollado por Carlos Ramos en Guatemala. © 2026</footer>
+</main>
+</div>
+<script>
+var g=document.getElementById("glow");
+addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px")},{passive:true});
+var links=document.querySelectorAll("#nav a"),secs=document.querySelectorAll("main section");
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id)})}})},{rootMargin:"-30% 0px -60% 0px"});
+secs.forEach(function(s){io.observe(s)});
+</script>
+</body>
 </html>
